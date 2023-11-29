@@ -230,3 +230,15 @@
 
 
 }());
+
+function smoothScroll(event) {
+	event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+
+	const targetId = event.currentTarget.getAttribute("href"); // Obtiene el ID del punto de anclaje
+	const targetPosition = document.querySelector(targetId).offsetTop; // Obtiene la posición del punto de anclaje
+
+	window.scrollTo({
+		top: targetPosition,
+		behavior: "smooth" // Hace el desplazamiento suave
+	});
+}
